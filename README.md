@@ -1,82 +1,112 @@
-# ConnectPeople
+Voleio - La Comunidad de Tenis de Playa en Tiempo Real
+<!-- Inserta aquí el logo de Voleio. Puedes subirlo al repo y enlazarlo. -->
+<p align="center">
+<img src="https://i.imgur.com/gK6wZJ1.png" alt="Logo de Voleio" width="200"/>
+</p>
+<p align="center">
+<strong>Conecta. Juega. Compite. Crece.</strong>
+</p>
+<p align="center">
+<!-- Badges/Shields para estado del proyecto - Reemplaza con los tuyos -->
+<img src="https://img.shields.io/badge/status-en--desarrollo-blue" alt="Estado del Proyecto">
+<img src="https://img.shields.io/badge/stack-Next.js%20/%20GraphQL-black" alt="Stack Tecnológico">
+<img src="https://img.shields.io/badge/arquitectura-Monorepo%20(Nx)-purple" alt="Arquitectura">
+<img src="https://img.shields.io/badge/licencia-MIT-green" alt="Licencia">
+</p>
+Voleio es una Progressive Web App (PWA) de nueva generación, concebida para ser el ecosistema digital definitivo para la comunidad de tenis de playa. Nuestra misión es eliminar la fricción de organizar partidos, conectar jugadores y hacer crecer la comunidad a través de una plataforma integrada, social y gamificada.
+📋 Tabla de Contenidos
+Propuesta Única de Valor (PUV)
+🚀 Funcionalidades Clave
+🛠️ Stack Tecnológico
+🗺️ Fases del Proyecto (Roadmap)
+⚙️ Empezando (Desarrollo Local)
+🤝 Contribuir
+📜 Licencia
+🎯 Propuesta Única de Valor (PUV)
+Tras un análisis exhaustivo del mercado, hemos identificado una clara ventana de oportunidad. Competidores como Playtomic dominan el mercado europeo del pádel con un modelo B2B2C, mientras que otros como Tenniscall demuestran la viabilidad de un modelo gratuito a escala global, y GTN muestra las debilidades de una experiencia de usuario anticuada.
+Voleio no es solo otra app para reservar canchas; es el ecosistema social en tiempo real para el tenis de playa, diseñado para dominar mercados desatendidos (como América Latina) a través de una experiencia de usuario superior, un enfoque comunitario y una integración total de funcionalidades.
+Nuestra diferenciación se basa en tres pilares estratégicos:
+🥇 Integración Total y Experiencia de Usuario Superior:
+Mientras la competencia ofrece soluciones fragmentadas o con interfaces anticuadas, Voleio integra Matching + Reservas + Comunidad + Gamificación en una única PWA fluida, moderna y mobile-first. No competimos en precio, competimos en experiencia.
+⚡ Hiper-foco en la Comunidad en Tiempo Real:
+Nuestra funcionalidad estrella, el "Voleio Inmediato", permite a los jugadores encontrar partidos al instante, con un llamado de urgencia para "¡Nos Falta Uno!". Esto transforma la app de una simple agenda a un mercado dinámico de jugadores, fomentando un engagement y un sentido de comunidad que ningún competidor ofrece.
+🏆 Gamificación Avanzada como Motor de Retención:
+Más allá de un simple historial de partidos, Voleio está construido sobre un sistema de gamificación profundo desde el día cero. Implementaremos un ranking ELO, logros, insignias y ligas para que cada partido cuente, creando un "efecto de red" y una retención a largo plazo.
+🚀 Funcionalidades Clave
+Funcionalidades Core (MVP)
+👥 Perfiles de Jugador: Con nivel de juego, estadísticas y disponibilidad.
+⚡ Voleio Inmediato: Búsqueda en tiempo real de jugadores y partidos disponibles "ahora".
+🙋‍♂️ ¡Nos Falta Uno!: Llamado de urgencia para completar partidos.
+💬 Chat Integrado: Creación automática de chats de grupo para coordinar partidos.
+🔐 Autenticación Social Express: Registro e inicio de sesión en un clic con Google, Apple, Facebook, Instagram, X (Twitter) y TikTok.
+Gamificación y Competencia
+📈 Ranking ELO: Sistema de clasificación dinámico basado en resultados.
+🏆 Logros y Trofeos (Badges): Recompensas por hitos y constancia.
+🏅 Ligas y Torneos: Herramientas para organizar y participar en competencias.
+Comunidad y Ecosistema (Post-MVP)
+🗓️ Agendar Partido: Herramienta de planificación para organizar partidos a futuro.
+🎾 Reserva de Canchas: Integración con clubes y "parceiros" para reservar directamente.
+🤝 Sistema de Amigos y Grupos: Construye tu red de jugadores.
+🛠️ Stack Tecnológico
+Hemos elegido un stack moderno, escalable y centrado en la seguridad de tipos y una experiencia de desarrollador de élite.
+Categoría	Tecnología	Razón de la Elección
+Arquitectura	Monorepo con Nx	Gestión centralizada del código, máxima reutilización entre apps (web, api, parceiros) y builds inteligentes.
+Frontend	Next.js (React)	PWA de alto rendimiento, optimización de SEO, y flexibilidad con Server/Client Components.
+Backend	Node.js, Apollo Server	Ecosistema robusto de TypeScript y la implementación estándar de la industria para APIs de GraphQL.
+Comunicación	GraphQL y WebSockets	API flexible y, crucialmente, suscripciones para las funcionalidades en tiempo real que son el corazón de Voleio.
+Base de Datos	PostgreSQL + PostGIS	Fiabilidad, escalabilidad y capacidades de consulta geoespacial de primer nivel para el matching por proximidad.
+ORM	Prisma	Seguridad de tipos de extremo a extremo entre la base de datos y la aplicación.
+Validación	Zod	La "Única Fuente de Verdad" para todos los datos, garantizando consistencia entre frontend y backend.
+UI y Estilos	Tailwind CSS + Shadcn/UI	Desarrollo de UI ultra-rápido, personalizable y accesible sin estar atado a una librería de componentes rígida.
+Iconos	Lucide React, Simple Icons	Librerías ligeras, consistentes y con una amplia selección de iconos.
+🗺️ Fases del Proyecto (Roadmap)
+Nuestro roadmap está diseñado para entregar valor de forma incremental, validando el producto en cada etapa.
+Fase 0: Cimentación y Arquitectura
+Entregable: Esqueleto del proyecto en un monorepo Nx, configuración del stack completo, y flujo de autenticación social express de extremo a extremo.
+Fase 1: MVP - El "Voleio Inmediato"
+Entregable: Una PWA funcional que permite a los usuarios registrarse, crear un perfil básico, declararse "disponibles", ver a otros jugadores en tiempo real, crear "Partidos Flash" y coordinar mediante un chat. Este es nuestro producto lanzable.
+Fase 2: Planificación y Gamificación Inicial
+Entregable: Funcionalidad para agendar partidos a futuro y la primera iteración del sistema de gamificación (registro de resultados, cálculo de ELO y rankings básicos).
+Fase 3: Ecosistema y Comunidad
+Entregable: Sistema de reserva de canchas (integración B2B), sistema de amigos, y expansión de la gamificación con ligas y torneos.
+Fases Futuras:
+Expansión a otros deportes de playa, portal de gestión para "parceiros", funciones de coaching y streaming en vivo.
+⚙️ Empezando (Desarrollo Local)
+Sigue estos pasos para levantar el entorno de desarrollo en tu máquina local.
+Prerrequisitos:
+Node.js (v18 o superior)
+pnpm
+Docker (par
+a la base de datos PostgreSQL)
+Pasos de Instalación:
+Clona el repositorio:
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+git clone https://github.com/tu-usuario/voleio.git
+cd voleio
+Instala las dependencias:
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
+pnpm install
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/next?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+Configura las Variables de Entorno:
+Crea una copia del archivo .env.example y renómbrala a .env.local en la raíz del proyecto.
+Rellena las variables necesarias, como las claves de tu base de datos y los proveedores de autenticación (Supabase, etc.).
 
-## Finish your CI setup
+# .env.local
 
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/7UwgyrDYyl)
+# Base de Datos (PostgreSQL)
+DATABASE_URL="postgresql://user:password@localhost:5432/voleio?schema=public"
 
+# Proveedores de Autenticación (Ej: Supabase)
+NEXT_PUBLIC_SUPABASE_URL="TU_URL_DE_SUPABASE"
+NEXT_PUBLIC_SUPABASE_ANON_KEY="TU_CLAVE_ANON_DE_SUPABASE"
+Levanta la Base de Datos con Docker:
+(Próximamente se añadirá un archivo docker-compose.yml para facilitar esto).
+Ejecuta la migración de la base de datos con Prisma:
 
-## Run tasks
+pnpm nx prisma-push --project=api
+Inicia el servidor de desarrollo:
 
-To run the dev server for your app, use:
+pnpm dev
+¡Listo! La aplicación estará corriendo en http://localhost:4200.
 
-```sh
-npx nx dev connect-people
-```
-
-To create a production bundle:
-
-```sh
-npx nx build connect-people
-```
-
-To see all available targets to run for a project, run:
-
-```sh
-npx nx show project connect-people
-```
-
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
-
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Add new projects
-
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
-
-Use the plugin's generator to create new projects.
-
-To generate a new application, use:
-
-```sh
-npx nx g @nx/next:app demo
-```
-
-To generate a new library, use:
-
-```sh
-npx nx g @nx/react:lib mylib
-```
-
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
-
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/nx-api/next?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+🤝

@@ -4,10 +4,10 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/connect-people-e2e"
+      "path": "./apps/voleio-app"
     },
     {
-      "path": "./apps/connect-people"
+      "path": "./apps/voleio-app-e2e"
     }
   ]
 }

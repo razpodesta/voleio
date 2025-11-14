@@ -1,0 +1,7 @@
+{
+  "name": "@voleio/voleio-app-e2e",
+  "private": true,
+  "nx": {
+    "implicitDependencies": ["voleio-app"]
+  }
+}

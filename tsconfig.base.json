@@ -16,6 +16,9 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["@connect-people/source"]
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["apps/voleio-app/src/*"]
+    }
   }
 }

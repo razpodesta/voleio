@@ -1,0 +1,45 @@
+{
+  "name": "voleio-app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/voleio-app/src",
+  "projectType": "application",
+  "tags": ["scope:app", "type:feature"],
+  "targets": {
+    "build": {
+      "executor": "@nx/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/voleio-app"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "apps/voleio-app"
+        },
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "voleio-app:build",
+        "dev": true,
+        "port": 3000
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "voleio-app:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "voleio-app:build:production",
+          "dev": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+// RUTA: apps/api/prisma/schema.prisma
+// VERSIÓN: 2.0 - Arquitectura H3
+// DESCRIPCIÓN: Define los modelos de datos para Voleio, utilizando
+//              índices H3 para geolocalización de alta eficiencia.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Modelo base para cada usuario registrado en la plataforma.
+model User {
+  id        String    @id @default(uuid())
+  email     String    @unique
+  password  String? // Opcional para permitir registros vía OAuth.
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  // Relación uno a uno con el perfil del jugador.
+  profile   Profile?
+}
+
+// Modelo que contiene la información pública y de juego del usuario.
+model Profile {
+  id        String    @id @default(uuid())
+  username  String    @unique
+  fullName  String?
+  avatarUrl String?
+  level     String    @default("PRINCIPIANTE")
+
+  // --- CAMPOS DE GEOLOCALIZACIÓN H3 ---
+  // Guardamos el índice H3 como un BigInt, que es el tipo nativo de H3 (uint64).
+  // Es opcional porque el usuario puede no compartir su ubicación.
+  h3Index   BigInt?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  // Relación con el modelo User.
+  userId    String    @unique
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // --- ÍNDICE DE BASE DE DATOS ---
+  // Esto es CRUCIAL. Le decimos a PostgreSQL que cree un índice en la
+  // columna h3Index para que las búsquedas geoespaciales sean instantáneas.
+  @@index([h3Index])
+}
+
+// Modelo para los clubes y canchas ("Parceiros").
+model Club {
+  id        String    @id @default(uuid())
+  name      String
+  address   String?
+
+  // --- CAMPOS DE GEOLOCALIZACIÓN H3 ---
+  // Para un club, la ubicación es obligatoria.
+  h3Index   BigInt
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([h3Index])
+}
